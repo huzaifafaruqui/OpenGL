@@ -99,22 +99,22 @@ void keyboard(unsigned char key, int x, int y) {
 void specialKeys(int key, int x, int y) {
 	switch (key) {
 	
-	case GLUT_KEY_RIGHT:    // Right: increase x speed
+	case GLUT_KEY_RIGHT:    // Move Right
 		ballX += xSpeed;
 		if (ballX > ballXMax)
 			ballX = ballXMax;
 		break;
-	case GLUT_KEY_LEFT:     // Left: decrease x speed
+	case GLUT_KEY_LEFT:     // Move Left
 		ballX -= xSpeed;
 		if (ballX < ballXMin)
 			ballX = ballXMin; 
 		break;
-	case GLUT_KEY_DOWN:       // Up: increase y speed
+	case GLUT_KEY_DOWN:       // Move Down
 		ballY -= ySpeed;
 		if (ballY < ballYMin)
 			ballY = ballYMin; 
 		break;
-	case GLUT_KEY_UP:     // Down: decrease y speed
+	case GLUT_KEY_UP:     // Move Up
 		ballY += ySpeed;
 		if (ballY > ballYMax)
 			ballY = ballYMax;
