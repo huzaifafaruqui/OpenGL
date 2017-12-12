@@ -6,8 +6,7 @@ OpenGL programs done in lab
 
 ### 2. Move circle on a line
 Circle moves clockwise around a line using right arrow. Logic is simple, at the endpoints of line the velocity direction gets reversed, the y-axis position is also changed by 2 * Radius. 
-![Imgur](https://i.imgur.com/NvMOiYH.png)
-![Imgur](https://i.imgur.com/UqvQpm5.png)
+![Alt Text](https://thumbs.gfycat.com/ImaginaryOrdinaryHorseshoecrab-size_restricted.gif)
 
 ### 3. Move circle with arrow keys
 ![Imgur](https://i.imgur.com/kel6jYm.png)
