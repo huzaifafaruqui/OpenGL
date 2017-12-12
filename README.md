@@ -14,8 +14,7 @@ Circle moves clockwise around a line using right arrow. Logic is simple, at the 
 
 ### 4. Zoom in/ out of a circle
 I used glScalef function to scale the image
-![Imgur](https://i.imgur.com/FotVsQh.png)
-![Imgur](https://i.imgur.com/0Qj1q4S.png)
+!![Alt Text](https://thumbs.gfycat.com/DeliriousNeglectedGoldenmantledgroundsquirrel-size_restricted.gif)
 
 ### 5. Dashed line in 3 different colors
 We have to enable stippled lines
