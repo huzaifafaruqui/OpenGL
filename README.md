@@ -19,4 +19,5 @@ I used glScalef function to scale the image
 
 ### 5. Dashed line in 3 different colors
 We have to enable stippled lines
+
 ![Imgur](https://i.imgur.com/gb94TKA.png)
