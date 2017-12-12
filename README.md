@@ -21,3 +21,8 @@ I used glScalef function to scale the image
 We have to enable stippled lines
 
 ![Imgur](https://i.imgur.com/gb94TKA.png)
+
+### 6. Draw free hand line using mouse
+I simply store all the points while the LMB is pressed and clear the screen when RMB is pressed. I use small connected line segments (GL_LINE_STRIP) to draw the curves
+
+![Imgur](https://i.imgur.com/JMJq6rT.png)
