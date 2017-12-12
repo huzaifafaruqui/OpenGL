@@ -16,3 +16,7 @@ Circle moves clockwise around a line using right arrow. Logic is simple, at the 
 I used glScalef function to scale the image
 ![Imgur](https://i.imgur.com/FotVsQh.png)
 ![Imgur](https://i.imgur.com/0Qj1q4S.png)
+
+### 5. Dashed line in 3 different colors
+We have to enable stippled lines
+![Imgur](https://i.imgur.com/gb94TKA.png)
