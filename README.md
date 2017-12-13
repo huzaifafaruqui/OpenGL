@@ -13,7 +13,7 @@ Circle moves clockwise around a line using right arrow. Logic is simple, at the 
 
 ### 4. Zoom in/ out of a circle
 I used glScalef function to scale the image
-!![Alt Text](https://thumbs.gfycat.com/DeliriousNeglectedGoldenmantledgroundsquirrel-size_restricted.gif)
+![Alt Text](https://thumbs.gfycat.com/DeliriousNeglectedGoldenmantledgroundsquirrel-size_restricted.gif)
 
 ### 5. Dashed line in 3 different colors
 We have to enable stippled lines
@@ -24,3 +24,7 @@ We have to enable stippled lines
 I simply store all the points while the LMB is pressed and clear the screen when RMB is pressed. I use small connected line segments (GL_LINE_STRIP) to draw the curves
 
 ![Imgur](https://i.imgur.com/JMJq6rT.png)
+
+### 6. Zoom in/ out and rotate a cube
+
+![Alt Text](https://thumbs.gfycat.com/CloseGreenBrocketdeer-size_restricted.gif)
