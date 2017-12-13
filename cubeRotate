@@ -1,0 +1,133 @@
+#include <Windows.h>
+#include <GL/glut.h>
+#include <math.h>
+#include <stdio.h>
+
+using namespace std;
+
+int ww = 320, wh = 240;
+float zoom = 1.0;
+float angle = 5;
+
+void display() {
+
+	glClear(GL_COLOR_BUFFER_BIT);
+	glColor3f(1.0, 0.0, 0.0);
+
+	glMatrixMode(GL_MODELVIEW);
+	glLoadIdentity();
+
+
+	glScalef(zoom, zoom, zoom);
+	glTranslatef(-0.25f, -0.25f, -0.25f);
+
+
+	//glLoadIdentity();
+	glRotatef(angle, 1.0f, 1.0f, 0.0f);
+	glBegin(GL_LINES);
+	glVertex3f(0, 0, 0);
+	glVertex3f(0, 0, 0.5f);
+
+	glVertex3f(0, 0, 0);
+	glVertex3f(0, 0.5f, 0);
+
+	glVertex3f(0, 0, 0);
+	glVertex3f(0.5f, 0, 0);
+
+	glVertex3f(0.5, 0, 0);
+	glVertex3f(0.5f, 0.5f, 0);
+
+	glVertex3f(0, 0.5f, 0);
+	glVertex3f(0.5f, 0.5f, 0);
+
+	glVertex3f(0.5f, 0, 0);
+	glVertex3f(0.5f, 0, 0.5f);
+
+	glVertex3f(0.0f, 0, 0.5f);
+	glVertex3f(0.5f, 0, 0.5f);
+
+	glVertex3f(0.0f, 0.5, 0.5f);
+	glVertex3f(0.0f, 0.0f, 0.5f);
+
+	glVertex3f(0.5f, 0, 0.5f);
+	glVertex3f(0.5f, 0.5f, 0.5f);
+
+
+	glVertex3f(0.0f, 0.5, 0.5f);
+	glVertex3f(0.0f, 0.5f, 0.0f);
+
+
+	glVertex3f(0.0f, 0.5, 0.5f);
+	glVertex3f(0.5f, 0.5f, 0.5f);
+
+
+	glVertex3f(0.5f, 0.5, 0.0f);
+	glVertex3f(0.5f, 0.5f, 0.5f);
+
+	glEnd();
+
+	glTranslatef(0.25f, 0.25f, 0.25f);
+
+	glFlush();
+
+
+}
+
+void keyboard(unsigned char key, int x, int y) {
+	//printf("%c %d", key, key);
+	if (key == 27)
+		exit(0);
+	else if (key == 'a')
+		zoom += 0.5;
+	else if (key == 'z')
+		zoom -= 0.5f;
+	else if (key == 'r')
+	{
+		angle += 5;
+		if (angle > 360)
+			angle -= 360;
+	}
+	else if (key == 't')
+	{
+		angle -= 5;
+		if (angle < 0)
+			angle += 360;
+	}
+	if (zoom <= 0)
+		zoom += 0.5f;
+	else if (zoom > 2.5)
+		zoom = 2.5;
+	glutPostRedisplay();
+}
+
+void reshape(GLsizei w, GLsizei h) {
+	if (!h)
+		++h;
+	GLfloat asp = w * 1.0 / h;
+	glViewport(0, 0, w, h);
+	glMatrixMode(GL_PROJECTION);
+	glLoadIdentity();
+
+	if (w >= h)
+	{
+		gluOrtho2D(-1 * asp, 1 * asp, -1, 1);
+	}
+	else {
+		gluOrtho2D(-1, 1, -1 / asp, 1 / asp);
+	}
+
+}
+
+
+int main(int argc, char** argv) {
+	glutInit(&argc, argv);
+	glutInitDisplayMode(GLUT_SINGLE);
+	glutInitWindowSize(ww, wh);
+	glutInitWindowPosition(50, 50);
+	glutCreateWindow("Cube");
+	glutDisplayFunc(display);
+	glutKeyboardFunc(keyboard);
+	glutReshapeFunc(reshape);
+	glClearColor(0.0, 0.0, 0.0, 1.0);
+	glutMainLoop();
+}
